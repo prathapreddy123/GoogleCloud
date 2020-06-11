@@ -1,0 +1,23 @@
+FROM gcr.io/dataflow-templates-base/python3-template-launcher-base
+
+ARG WORKDIR=/dataflow/template
+WORKDIR ${WORKDIR}
+
+# Install apache beam sdk
+ENV PIP_DISABLE_PIP_VERSION_CHECK=1
+#ENV PIP_NO_CACHE_DIR=1
+RUN pip install -U apache-beam[gcp]==2.20.0
+
+ENV FLEX_TEMPLATE_PYTHON_REQUIREMENTS_FILE="${WORKDIR}/requirements.txt"
+ENV FLEX_TEMPLATE_PYTHON_SETUP_FILE="${WORKDIR}/setup.py"
+ENV FLEX_TEMPLATE_PYTHON_PY_FILE="${WORKDIR}/pipeline.py"
+
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+
+# Copy source files
+COPY setup.py .
+COPY pipeline.py .
+COPY fake_messages ./fake_messages
+
+

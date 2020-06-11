@@ -1,0 +1,21 @@
+{
+  "name": "Fake messages Python flex template",
+  "description": "Example for python flex template.",
+  "parameters": [
+    {
+      "name": "message-count",
+      "label": "Message Count",
+      "helpText": "Number of messages to be generated.",
+      "is_optional": false,
+      "regexes": [
+        "[0-9]+"
+      ]
+    },
+    {
+      "name": "output-path",
+      "label": "Output path.",
+      "helpText": "Output Path to which the final  output should be written to.",
+      "is_optional": false
+    }
+  ]
+}
