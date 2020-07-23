@@ -12,6 +12,7 @@ echo "BASE_BRANCH=${BASE_BRANCH}"
 echo "HEAD_REPO_URL=${HEAD_REPO_URL}"
 echo "PR_NUMBER=${PR_NUMBER}"
 
+
 git clone "${BASE_REPO_URL}"
 cd "${REPO_NAME}"
 git fetch origin refs/pull/${PR_NUMBER}/head:validate#${PR_NUMBER}
