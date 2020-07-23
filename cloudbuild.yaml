@@ -11,7 +11,7 @@ steps:
   args: ['./helpers/pr-validations.sh']
   env: [
            'PROJECT_ID=${PROJECT_ID}',
-           'BASE_REPO_URL=https://github.com/prathapreddy123/GoogleCloud.git',
+           'BASE_REPO_URL=${_BASE_REPO_URL}',
            'COMMIT_SHA=${COMMIT_SHA}',
            'SHORT_SHA=${SHORT_SHA}',
            'REPO_NAME=${REPO_NAME}',
@@ -21,3 +21,6 @@ steps:
            'HEAD_REPO_URL=${_HEAD_REPO_URL}',
            'PR_NUMBER=${_PR_NUMBER}',
   ]
+substitutions:
+  # Default values
+  _BASE_REPO_URL: 'https://github.com/prathapreddy123/GoogleCloud.git'
