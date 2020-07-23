@@ -13,9 +13,9 @@ class GenerateFake(beam.DoFn):
         self.config = None
 
     def start_bundle(self):
-        #When package data
+        #When package data exists
         #root_dir = pathlib.Path(__file__).parent.parent.resolve()
-        #When data
+        #When data exists
         # root_dir = pathlib.Path(__file__).parent.parent.parent.resolve()
         #
         # file_path = pathlib.Path(root_dir,"conf/parameters.yaml").resolve()
