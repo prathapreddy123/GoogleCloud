@@ -18,7 +18,8 @@ git fetch origin refs/pull/${PR_NUMBER}/head:validate#${PR_NUMBER}
 git checkout validate#${PR_NUMBER}
 if ! git rebase "origin/${BASE_BRANCH}"
 then
+  echo "PR#${PR_NUMBER} cannot be rebased automatically. Resolve conflicts manually"
   exit 1
 fi
 
-echo "PR${PR_NUMBER} can be rebased successfully on ${BASE_BRANCH} branch."
+echo "PR#${PR_NUMBER} can be rebased successfully on ${BASE_BRANCH} branch."
