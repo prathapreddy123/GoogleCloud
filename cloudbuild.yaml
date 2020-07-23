@@ -1,0 +1,22 @@
+#  gcloud builds submit . \
+#   --config=cloudbuild.yaml \
+#   --substitutions=COMMIT_SHA="bd671f47ce9e95dce00d0c07aee08f46d65658e4",SHORT_SHA="bd671f47ce9",REPO_NAME="repo",\
+# BRANCH_NAME="master",_HEAD_BRANCH="head",_BASE_BRANCH="base",\
+# _HEAD_REPO_URL="repo url",_PR_NUMBER="123"
+
+steps:
+- id: check-pullrequest
+  name: gcr.io/cloud-builders/git
+  entrypoint: 'bash'
+  args: ['./helpers/pr-validations.sh']
+  env: [
+           'PROJECT_ID=${PROJECT_ID}',
+           'COMMIT_SHA=${COMMIT_SHA}',
+           'SHORT_SHA=${SHORT_SHA}',
+           'REPO_NAME=${REPO_NAME}',
+           'BRANCH_NAME=${BRANCH_NAME}',
+           'HEAD_BRANCH=${_HEAD_BRANCH}',
+           'BASE_BRANCH=${_BASE_BRANCH}',
+           'HEAD_REPO_URL=${_HEAD_REPO_URL}',
+           'PR_NUMBER=${_PR_NUMBER}',
+  ]
