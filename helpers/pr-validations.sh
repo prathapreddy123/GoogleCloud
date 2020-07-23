@@ -1,6 +1,6 @@
 set -e
 
-echo "** Printing all variables **"
+echo "*** Printing all variables ***"
 
 echo "PROJECT_ID=${PROJECT_ID}"
 echo "COMMIT_SHA=${COMMIT_SHA}"
