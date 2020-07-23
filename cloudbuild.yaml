@@ -1,8 +1,8 @@
 #  gcloud builds submit . \
 #   --config=cloudbuild.yaml \
-#   --substitutions=COMMIT_SHA="bd671f47ce9e95dce00d0c07aee08f46d65658e4",SHORT_SHA="bd671f47ce9",REPO_NAME="repo",\
-# BRANCH_NAME="master",_HEAD_BRANCH="head",_BASE_BRANCH="base",\
-# _HEAD_REPO_URL="repo url",_PR_NUMBER="123"
+#   --substitutions=COMMIT_SHA="9f8b3430b5c62b88acd2acf1afddd9a85f3099b3",SHORT_SHA="bd671f47ce9",REPO_NAME="repo",\
+# BRANCH_NAME="pocfeat",_HEAD_BRANCH="pocfeat",_BASE_BRANCH="master",\
+# _HEAD_REPO_URL="https://github.com/mkaduv/GoogleCloud",_PR_NUMBER="2"
 
 steps:
 - id: check-pullrequest
@@ -11,6 +11,7 @@ steps:
   args: ['./helpers/pr-validations.sh']
   env: [
            'PROJECT_ID=${PROJECT_ID}',
+           'BASE_REPO_URL=https://github.com/prathapreddy123/GoogleCloud.git',
            'COMMIT_SHA=${COMMIT_SHA}',
            'SHORT_SHA=${SHORT_SHA}',
            'REPO_NAME=${REPO_NAME}',
