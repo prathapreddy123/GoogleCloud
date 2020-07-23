@@ -1,6 +1,6 @@
 set -e
 
-echo "** Printing all variables **"
+echo "*** Printing all variables ***"
 
 echo "PROJECT_ID=${PROJECT_ID}"
 echo "COMMIT_SHA=${COMMIT_SHA}"
@@ -11,6 +11,7 @@ echo "HEAD_BRANCH=${HEAD_BRANCH}"
 echo "BASE_BRANCH=${BASE_BRANCH}"
 echo "HEAD_REPO_URL=${HEAD_REPO_URL}"
 echo "PR_NUMBER=${PR_NUMBER}"
+
 
 git clone "${BASE_REPO_URL}"
 cd "${REPO_NAME}"
