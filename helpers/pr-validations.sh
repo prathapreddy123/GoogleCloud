@@ -12,7 +12,7 @@ echo "BASE_BRANCH=${BASE_BRANCH}"
 echo "HEAD_REPO_URL=${HEAD_REPO_URL}"
 echo "PR_NUMBER=${PR_NUMBER}"
 
-git config user.email "sample@example.com"
+#git config user.email "sample@example.com"
 
 git clone "${BASE_REPO_URL}"
 echo "Repo cloned successfully"
