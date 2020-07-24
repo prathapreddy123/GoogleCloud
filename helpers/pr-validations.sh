@@ -12,7 +12,8 @@ echo "BASE_BRANCH=${BASE_BRANCH}"
 echo "HEAD_REPO_URL=${HEAD_REPO_URL}"
 echo "PR_NUMBER=${PR_NUMBER}"
 
-#git config user.email "sample@example.com"
+git config user.email "presubmit@example.com"
+git config user.name "presubmit"
 
 git clone "${BASE_REPO_URL}"
 echo "Repo cloned successfully"
@@ -23,8 +24,8 @@ git checkout validate#${PR_NUMBER}
 #merge --ff-only
 if ! git rebase "origin/${BASE_BRANCH}"
 then
-  echo "PR#${PR_NUMBER} cannot be fast forwared automatically. Resolve conflicts manually"
+  echo "PR#${PR_NUMBER} cannot be rebased automatically. Resolve conflicts manually"
   exit 1
 fi
 
-echo "PR#${PR_NUMBER} can be fast forwared successfully on ${BASE_BRANCH}."
+echo "PR#${PR_NUMBER} can be rebased/fast forwared successfully on ${BASE_BRANCH}."
