@@ -8,7 +8,7 @@ REQUIRED_PACKAGES = []
 #    "pyyaml==5.3.1",
 # ]
 
-#Load the required packages from requirements file
+#Load the required packages from requirements.txt file
 # if os.path.exists(REQUIREMENTS_FILE):
 #     with open(REQUIREMENTS_FILE) as fp:
 #         REQUIRED_PACKAGES = fp.read().splitlines()
