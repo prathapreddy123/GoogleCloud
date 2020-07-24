@@ -20,7 +20,8 @@ cd "${REPO_NAME}"
 git fetch origin refs/pull/${PR_NUMBER}/head:validate#${PR_NUMBER}
 echo "pull ref created"
 git checkout validate#${PR_NUMBER}
-if ! git merge --ff-only "origin/${BASE_BRANCH}"
+#merge --ff-only
+if ! git rebase "origin/${BASE_BRANCH}"
 then
   echo "PR#${PR_NUMBER} cannot be fast forwared automatically. Resolve conflicts manually"
   exit 1
