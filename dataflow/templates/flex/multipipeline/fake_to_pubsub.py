@@ -37,7 +37,7 @@ def run(argv: List[str] = None, save_main_session: bool = True) -> None:
     """"Driver function to parse command line args, build pipeline options and invokes pipeline
 
       Args:
-          user_args: Command line arguments specified by the user
+          user_args: Command line args specified by the user
           pipeline_options: Dataflow Pipeline options
 
       Returns:
