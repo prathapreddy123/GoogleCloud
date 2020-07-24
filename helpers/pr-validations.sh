@@ -26,4 +26,4 @@ then
   exit 1
 fi
 
-echo "PR#${PR_NUMBER} can be rebased successfully on ${BASE_BRANCH} branch."
+echo "PR#${PR_NUMBER} can be fast forwared successfully on ${BASE_BRANCH}."
