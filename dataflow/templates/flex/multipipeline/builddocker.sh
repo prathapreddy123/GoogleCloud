@@ -1,3 +1,4 @@
+#Build a docker file
 function fake_to_gcs() {
  cat BaseDockerfile > Dockerfile
  cat << EOF >> Dockerfile
