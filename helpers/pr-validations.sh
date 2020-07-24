@@ -12,12 +12,11 @@ echo "BASE_BRANCH=${BASE_BRANCH}"
 echo "HEAD_REPO_URL=${HEAD_REPO_URL}"
 echo "PR_NUMBER=${PR_NUMBER}"
 
-git config user.email "presubmit@example.com"
-git config user.name "presubmit"
-
 git clone "${BASE_REPO_URL}"
 echo "Repo cloned successfully"
 cd "${REPO_NAME}"
+git config user.email "presubmit@example.com"
+git config user.name "presubmit"
 git fetch origin refs/pull/${PR_NUMBER}/head:validate#${PR_NUMBER}
 echo "pull ref created"
 git checkout validate#${PR_NUMBER}
