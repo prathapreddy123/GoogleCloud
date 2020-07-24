@@ -22,7 +22,7 @@ echo "pull ref created"
 git checkout validate#${PR_NUMBER}
 if ! git merge --ff-only "origin/${BASE_BRANCH}"
 then
-  echo "PR#${PR_NUMBER} cannot be rebased automatically. Resolve conflicts manually"
+  echo "PR#${PR_NUMBER} cannot be fast forwared automatically. Resolve conflicts manually"
   exit 1
 fi
 
