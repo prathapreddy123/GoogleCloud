@@ -12,7 +12,7 @@ echo "BASE_BRANCH=${BASE_BRANCH}"
 echo "HEAD_REPO_URL=${HEAD_REPO_URL}"
 echo "PR_NUMBER=${PR_NUMBER}"
 
-git clone "${BASE_REPO_URL}"
+git clone "${BASE_REPO_URL}" --branch ${BASE_BRANCH} --single-branch
 echo "Repo cloned successfully"
 cd "${REPO_NAME}"
 git config user.email "presubmit@example.com"
@@ -27,4 +27,4 @@ then
   exit 1
 fi
 
-echo "PR#${PR_NUMBER} can be rebased/fast forwared successfully on ${BASE_BRANCH}."
+echo "PR#${PR_NUMBER} can be rebased successfully on ${BASE_BRANCH}."
