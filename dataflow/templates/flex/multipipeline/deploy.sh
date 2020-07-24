@@ -55,7 +55,7 @@ function build_dockerimage() {
   # (Optional) Enable to use Kaniko cache by default.
   gcloud config set builds/use_kaniko True
 
-  # Build the image into Container Registry, this is roughly equivalent to:
+  # Build the image into Container Registry and this is roughly equivalent to:
   # gcloud auth configure-docker
   # docker image build -t $TEMPLATE_IMAGE .
   # docker push $TEMPLATE_IMAGE
