@@ -13,7 +13,7 @@ from fake_messages.transforms import dofns
 
 
 def parse_cliargs(argv) -> Tuple[argparse.Namespace, List[str]]:
-    """"Parses Command line arguments
+    """"Parses Command line args
 
       Args: None
 
