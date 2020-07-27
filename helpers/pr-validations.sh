@@ -1,5 +1,20 @@
 set -ex
 
+: '
+When raised PR 17 from mkv/feature branch to merge on to master of
+prathapreddy123/GoogleCloud repo below are values:
+
+PROJECT_ID=prathap-poc
+COMMIT_SHA=73434e300319db035d61783f6a2367a015992fee
+SHORT_SHA=73434e3
+REPO_NAME=GoogleCloud
+BRANCH_NAME=feature
+HEAD_BRANCH=feature
+BASE_BRANCH=master
+HEAD_REPO_URL=https://github.com/monikaduv/GoogleCloud
+PR_NUMBER=17
+'
+
 echo "*** Printing all variables ***"
 
 echo "PROJECT_ID=${PROJECT_ID}"

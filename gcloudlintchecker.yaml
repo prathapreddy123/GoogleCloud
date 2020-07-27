@@ -1,0 +1,30 @@
+steps:
+  ###########################################################
+  # Step 0: Pull image if exists
+  ###########################################################
+  - name: 'gcr.io/cloud-builders/docker'
+    entrypoint: 'bash'
+    #args: ['-c', 'docker pull gcr.io/$PROJECT_ID/googlecloud-professionalservices:latest || echo ${_IMAGE_NAME}']
+    args: ['-c', 'echo gcr.io/$PROJECT_ID/${_IMAGE_NAME}']
+  ##########################################################
+  # Step 1: Create a Docker image with Python installed
+  ###########################################################
+  # - name: 'gcr.io/cloud-builders/docker'
+  #   args:
+  #     - 'build'
+  #     - '--tag=gcr.io/$PROJECT_ID/googlecloud-professionalservices:latest'
+  #     - '--cache-from=gcr.io/$PROJECT_ID/googlecloud-professionalservices:latest'
+  #     - '-f=cloudbuild/Dockerfile'
+  #     - '.'
+  ###########################################################
+  # Step 2: Run unit tests
+  ###########################################################
+  # - name: 'gcr.io/$PROJECT_ID/googlecloud-professionalservices'
+  #   args: ["test"]
+
+substitutions:
+  # Default values
+  _IMAGE_NAME: 'gcr.io/$PROJECT_ID/ghub-gcloud'
+options:
+    substitution_option: 'ALLOW_LOOSE'
+timeout: 900s
