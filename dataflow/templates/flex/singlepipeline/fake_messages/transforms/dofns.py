@@ -41,6 +41,6 @@ class GenerateFake(beam.DoFn):
           ,"dependecies" : ",".join(self.config["dependecies"])
         })
 
-
+#Join names
 def join_names(first_name: str, last_name: str):
     return first_name.strip() + " " + last_name.strip()
